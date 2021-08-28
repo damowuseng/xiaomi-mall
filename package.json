@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "mockm": "./node_modules/.bin/mockm"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -25,6 +26,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "mockm": "^1.1.25-alpha.15",
     "vue-template-compiler": "^2.6.11"
   }
 }
