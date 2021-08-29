@@ -1,21 +1,24 @@
 <template>
   <div class="home">
     <nav-bar/>
-<!--    <footer-bar/>-->
+    <index/>
+    <footer-bar/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-// import FooterBar from '@/components/common/FooterBar'
 import NavBar from '@/components/common/NavBar'
+import Index from '@/views/index/Index'
+import FooterBar from '@/components/common/FooterBar'
+
 
 export default {
   name: 'Home',
   components: {
     NavBar,
-    // FooterBar
+    Index,
+    FooterBar
    
   }
 }

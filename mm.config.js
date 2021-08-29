@@ -17,11 +17,14 @@ module.exports = util => {
 		api(util) {
 			return {
 				// 创建接口并使用 mockjs 生成数据
-				'get /api/test': mockjs.mock({ // http://127.0.0.1:9000/api/test 可以访问这个接口
-					success: true,
-					'data|3-7': [{
+				'get /api/user/login': mockjs.mock({ // http://127.0.0.1:9000/api/test 可以访问这个接口
+					"status": 0,
+					'products|3-7': [{
 						userId : `@id`,
 						userName: `@cname`,
+						email:`@email`,
+						phone: `@number`,
+						price: `@integer(1600, 4400)`
 					}]
 				}),
 			}

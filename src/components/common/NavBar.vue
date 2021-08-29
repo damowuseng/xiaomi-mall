@@ -30,7 +30,8 @@
 									<a href="#" target="_blank">
 										<div class="p-img"><img src="/imgs/nav-img/nav-1.png" alt=""></div>
 										<div class="p-title">小米CC10</div>
-										<div class="p-price">1799</div>
+<!--										<div class="p-price" v-for="(item,index) in phoneList" :key="index">{{item.price}}</div>-->
+										<div class="p-price" >5678</div>
 									</a>
 								</li>
 								<li class="product">
@@ -141,13 +142,33 @@
 </template>
 
 <script>
+	import {getNavData} from "../../network/navbar";
+	
 	export default {
 		name: "NavBar",
-		// data () {
-		// 	return {
-		// 		publicPath: process.env.BASE_URL
-		// 	}
-		// }
+		data () {
+			return {
+				publicPath: process.env.BASE_URL,
+				phoneList: []
+			}
+		},
+		created() {
+			this.getNavData()
+		},
+		mounted() {
+			// this.getNavData()
+		},
+		methods:{
+			getNavData() {
+				getNavData().then(res => {
+					console.log(res.data.products)
+					this.phoneList = res.data.products
+					console.log(this.phoneList)
+				},err => {
+					console.log(err)
+				})
+			}
+		}
 	}
 </script>
 
@@ -260,7 +281,7 @@
 						width: 1226px;
 						height: 0px;
 						visibility: hidden;
-						/*overflow: hidden;*/
+						background-color:#ffffff;
 						border-top: 1px solid #E5e5e5;
 						box-shadow:0 7px 6px 0 rgba(0,0,0, 0.11) ;
 						z-index: 10;
